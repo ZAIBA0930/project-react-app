@@ -25,19 +25,19 @@ jobs:
       with:
          version: 12
      
-   - name: GitHub Action for Yarn
-     uses: Borales/actions-yarn@v2.1.0
-     with:
-       # Yarn command
-       cmd: install # npm install/ yarn install
+    - name: GitHub Action for Yarn
+      uses: Borales/actions-yarn@v2.1.0
+      with:
+        # Yarn command
+        cmd: install # npm install/ yarn install
        
-   - name: Creating build 
-     uses: yarn build
+    - name: Creating build 
+      uses: yarn build
      
-   - name: instaliing surge
-     run: npm install -g surge
+    - name: instaliing surge
+      run: npm install -g surge
    
-   - name: deploying on surge
-     run: surge ./build http://first_practice.surge.sh/ --token ${{secrets.SURGE_DOMAIN}}
+    - name: deploying on surge
+      run: surge ./build http://first_practice.surge.sh/ --token ${{secrets.SURGE_DOMAIN}}
      
      
